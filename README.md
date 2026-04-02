@@ -38,7 +38,7 @@ project/
 Download the following files:
 
 * [GO ontology (OBO)](https://current.geneontology.org/ontology/go-basic.obo)
-* [Human gene annotations (GAF)](https://current.geneontology.org/annotations/goa_human.gaf)
+* [Human gene annotations (GAF)](https://current.geneontology.org/annotations/goa_human.gaf.gz)
 
 Place them in the same folder as `software.py`.
 ___
