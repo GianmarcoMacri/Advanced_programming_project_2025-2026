@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Similarity</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Similarity Result</h1>
+
+<div class="box">
+<p><b>{{ gene1 }}</b> vs <b>{{ gene2 }}</b></p>
+<p>Measure: {{ measure }}</p>
+<p style="font-size: 24px;">Score: {{ similarity }}</p>
+</div>
+
+<div class="box">
+<h3>Similarity Matrix</h3>
+
+<table border="1" style="margin:auto;">
+    <tr>
+        <th></th>
+        <th>{{ gene1 }}</th>
+        <th>{{ gene2 }}</th>
+    </tr>
+
+    <tr>
+        <th>{{ gene1 }}</th>
+        <td>{{ matrix[0][0] }}</td>
+        <td>{{ matrix[0][1] }}</td>
+    </tr>
+
+    <tr>
+        <th>{{ gene2 }}</th>
+        <td>{{ matrix[1][0] }}</td>
+        <td>{{ matrix[1][1] }}</td>
+    </tr>
+</table>
+</div>
+<br>
+<a href="/">⬅ Back</a>
+
+</body>
+</html>

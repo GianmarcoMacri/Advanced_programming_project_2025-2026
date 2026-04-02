@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>GO Analysis System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        input, select {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        .box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>GO Analysis System</h1>
+
+<!-- ===== GENE SEARCH ===== -->
+<div class="box">
+<h2>Search Gene</h2>
+
+<form action="/gene">
+    <input list="genes" name="gene" placeholder="Enter gene (e.g. TP53)">
+    <input type="submit" value="Search">
+</form>
+
+<datalist id="genes">
+{% for g in genes %}
+    <option value="{{ g }}">
+{% endfor %}
+</datalist>
+
+</div>
+
+<!-- ===== GO SEARCH ===== -->
+<div class="box">
+<h2>Explore GO Term</h2>
+
+<form action="/go">
+    <input list="gos" name="go" placeholder="GO:0000027">
+    <input type="submit" value="Explore">
+</form>
+
+<datalist id="gos">
+{% for go in gos %}
+    <option value="{{ go }}">
+{% endfor %}
+</datalist>
+
+</div>
+
+<!-- ===== SIMILARITY ===== -->
+<div class="box">
+<h2>Gene Similarity</h2>
+
+<form action="/similarity">
+    <input list="genes" name="gene1" placeholder="Gene 1 (e.g. TP53)">
+    <input list="genes" name="gene2" placeholder="Gene 2 (e.g. BRCA1)">
+
+    <select name="measure">
+        <option value="jaccard">Jaccard</option>
+        <option value="overlap">Overlap</option>
+    </select>
+
+    <input type="submit" value="Compare">
+</form>
+<datalist id="genes">
+{% for g in genes %}
+    <option value="{{ g }}">
+{% endfor %}
+</datalist>
+
+</div>
+
+</body>
+</html>

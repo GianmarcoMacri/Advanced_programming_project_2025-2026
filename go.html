@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>GO Term</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+            margin-bottom: 20px;
+        }
+
+        img {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>GO Term: {{ go_id }}</h1>
+
+{% if error %}
+<p style="color:red;">GO term not found</p>
+
+{% else %}
+
+<!-- INFO -->
+<div class="box">
+<p><b>Name:</b> {{ name }}</p>
+<p><b>Depth:</b> {{ depth }}</p>
+</div>
+
+<!-- GRAPH -->
+<div class="box">
+<h3>Graph</h3>
+
+{% if graph %}
+<img src="{{ graph }}" width="600">
+{% else %}
+<p>No graph available</p>
+{% endif %}
+
+</div>
+
+<!-- ANCESTORS -->
+<div class="box">
+<h3>Ancestors</h3>
+<ul>
+{% for a in ancestors %}
+<li>{{ a }}</li>
+{% endfor %}
+</ul>
+</div>
+
+<!-- DESCENDANTS -->
+<div class="box">
+<h3>Descendants</h3>
+<ul>
+{% for d in descendants %}
+<li>{{ d }}</li>
+{% endfor %}
+</ul>
+</div>
+
+{% endif %}
+
+<br>
+<a href="/">⬅ Back</a>
+
+</body>
+</html>
