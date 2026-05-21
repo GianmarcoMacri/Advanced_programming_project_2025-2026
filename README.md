@@ -91,6 +91,7 @@ http://127.0.0.1:5000
 
 ---
 
+
 ## Notes
 
 * The `.obo` and `.gaf` files are not included in the repository
@@ -99,7 +100,7 @@ http://127.0.0.1:5000
 
 ---
 
-## Author
+## Contributors
 
 Gianmarco Macrì (https://github.com/GianmarcoMacri)
 Ahmad Shakaroun (https://github.com/Ahmadshakaroun)
